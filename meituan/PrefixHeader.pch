@@ -1,0 +1,21 @@
+//
+//  PrefixHeader.pch
+//  meituan
+//
+//  Created by jinzelu on 15/6/17.
+//  Copyright (c) 2015年 jinzelu. All rights reserved.
+//
+
+#ifndef meituan_PrefixHeader_pch
+#define meituan_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+
+#import "Public.h"
+#import "UIImageView+WebCache.h"
+
+
+#endif
