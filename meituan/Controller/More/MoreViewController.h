@@ -1,5 +1,5 @@
 //
-//  MineViewController.h
+//  MoreViewController.h
 //  meituan
 //
 //  Created by jinzelu on 15/7/6.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MineViewController : UIViewController
+@interface MoreViewController : UIViewController
 
-@property(nonatomic, strong) UITableView *tableView;
+@property(nonatomic, strong)UITableView *tableView;
 
 @end

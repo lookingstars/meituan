@@ -10,6 +10,8 @@
 #import "HomeViewController.h"
 #import "InfoViewController.h"
 #import "MerchantViewController.h"
+#import "MineViewController.h"
+#import "MoreViewController.h"
 
 #import <CoreLocation/CoreLocation.h>
 
@@ -78,9 +80,9 @@
     UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:VC2];
     UIViewController *VC3 = [[UIViewController alloc] init];
     UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:VC3];
-    UIViewController *VC4 = [[UIViewController alloc] init];
+    MineViewController *VC4 = [[MineViewController alloc] init];
     UINavigationController *nav4 = [[UINavigationController alloc] initWithRootViewController:VC4];
-    UIViewController *VC5 = [[UIViewController alloc] init];
+    MoreViewController *VC5 = [[MoreViewController alloc] init];
     UINavigationController *nav5 = [[UINavigationController alloc] initWithRootViewController:VC5];
     VC1.title = @"团购";
     VC2.title = @"上门";
