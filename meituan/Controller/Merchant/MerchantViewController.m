@@ -10,6 +10,7 @@
 #import "NetworkSingleton.h"
 #import "ImageScrollCell.h"
 #import "MJExtension.h"
+#import "MJRefresh.h"
 #import "ServiceAdvModel.h"
 #import "HomeServiceModel.h"
 #import "HomeServiceCell.h"
@@ -40,12 +41,6 @@
     [self initData];
     [self initViews];
     
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //
-        [self getServiceAdvData];
-        [self getHomeServiewData];
-    });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,6 +61,43 @@
     self.tableView.dataSource = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.tableView];
+    [self setUpTableView];
+}
+
+-(void)setUpTableView{
+    //添加下拉的动画图片
+    //设置下拉刷新回调
+    [self.tableView addGifHeaderWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    
+    //设置普通状态的动画图片
+    NSMutableArray *idleImages = [NSMutableArray array];
+    for (NSUInteger i = 1; i<=60; ++i) {
+        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_anim__000%zd",i]];
+        [idleImages addObject:image];
+    }
+    [self.tableView.gifHeader setImages:idleImages forState:MJRefreshHeaderStateIdle];
+    
+    //设置即将刷新状态的动画图片
+    NSMutableArray *refreshingImages = [NSMutableArray array];
+    for (NSInteger i = 1; i<=3; i++) {
+        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_loading_0%zd",i]];
+        [refreshingImages addObject:image];
+    }
+    [self.tableView.gifHeader setImages:refreshingImages forState:MJRefreshHeaderStatePulling];
+    
+    //设置正在刷新是的动画图片
+    [self.tableView.gifHeader setImages:refreshingImages forState:MJRefreshHeaderStateRefreshing];
+    
+    //马上进入刷新状态
+    [self.tableView.gifHeader beginRefreshing];
+}
+
+-(void)loadNewData{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //
+        [self getServiceAdvData];
+        [self getHomeServiewData];
+    });
 }
 
 
@@ -83,8 +115,11 @@
         
         [self.tableView reloadData];
         
+        
+        [self.tableView.header endRefreshing];
     } failureBlock:^(NSString *error){
         NSLog(@"上门服务请求失败：%@",error);
+        [self.tableView.header endRefreshing];
     }];
 }
 

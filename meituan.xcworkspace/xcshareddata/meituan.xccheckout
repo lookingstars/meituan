@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D32DE5D4-942D-4DE4-A22D-C819518C1273</string>
+	<key>IDESourceControlProjectName</key>
+	<string>meituan</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F0DB76D150EA4E7D0F034D4F9D3C7E1EB0DC8D39</key>
+		<string>https://github.com/lookingstars/meituan.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>meituan.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F0DB76D150EA4E7D0F034D4F9D3C7E1EB0DC8D39</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/lookingstars/meituan.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F0DB76D150EA4E7D0F034D4F9D3C7E1EB0DC8D39</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F0DB76D150EA4E7D0F034D4F9D3C7E1EB0DC8D39</string>
+			<key>IDESourceControlWCCName</key>
+			<string>meituan</string>
+		</dict>
+	</array>
+</dict>
+</plist>

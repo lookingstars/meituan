@@ -23,6 +23,7 @@
 		E3513F271B4A85B90071936B /* icon_user_avatar_anonymous@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3513F1F1B4A85B90071936B /* icon_user_avatar_anonymous@2x.png */; };
 		E3513F281B4A85B90071936B /* icon_userreview_defaultavatar.png in Resources */ = {isa = PBXBuildFile; fileRef = E3513F201B4A85B90071936B /* icon_userreview_defaultavatar.png */; };
 		E3513F2B1B4A8B880071936B /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3513F2A1B4A8B880071936B /* MoreViewController.m */; };
+		E3513F2D1B4B68230071936B /* MoreData.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3513F2C1B4B68230071936B /* MoreData.plist */; };
 		E3D814F21B2AD522005689B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D814F11B2AD522005689B8 /* main.m */; };
 		E3D814F51B2AD522005689B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D814F41B2AD522005689B8 /* AppDelegate.m */; };
 		E3D814F81B2AD522005689B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D814F71B2AD522005689B8 /* ViewController.m */; };
@@ -128,6 +129,7 @@
 		E3513F201B4A85B90071936B /* icon_userreview_defaultavatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_userreview_defaultavatar.png; sourceTree = "<group>"; };
 		E3513F291B4A8B880071936B /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		E3513F2A1B4A8B880071936B /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		E3513F2C1B4B68230071936B /* MoreData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MoreData.plist; sourceTree = "<group>"; };
 		E3D814EC1B2AD522005689B8 /* meituan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meituan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D814F01B2AD522005689B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D814F11B2AD522005689B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				E3D815A51B423E36005689B8 /* menuData.plist */,
+				E3513F2C1B4B68230071936B /* MoreData.plist */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -790,6 +793,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D815751B315D21005689B8 /* icon_homepage_search.png in Resources */,
+				E3513F2D1B4B68230071936B /* MoreData.plist in Resources */,
 				E3513F241B4A85B90071936B /* icon_mine_default_portrait@2x.png in Resources */,
 				E3D8155F1B3150BB005689B8 /* icon_tabbar_mine_selected@2x.png in Resources */,
 				E3D815A61B423E36005689B8 /* menuData.plist in Resources */,
