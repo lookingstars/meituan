@@ -100,6 +100,19 @@
 }
 
 
+#pragma mark - 店铺详情
+-(void)getShopResult:(NSDictionary *)userInfo url:(NSString *)url successBlock:(SuccessBlock)successBlock failureBlock:(FailureBlock)failureBlock{
+    AFHTTPRequestOperationManager *manager = [self baseHtppRequest];
+    NSString *urlStr = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [manager GET:urlStr parameters:userInfo success:^(AFHTTPRequestOperation *operation, id responseObject){
+        successBlock(responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+        NSString *errorStr = [error.userInfo objectForKey:@"NSLocalizedDescription"];
+        failureBlock(errorStr);
+    }];
+}
+
+
 
 
 #pragma mark - 上门

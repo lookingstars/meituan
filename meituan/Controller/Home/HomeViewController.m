@@ -26,6 +26,7 @@
 #import "RushViewController.h"
 #import "DiscountOCViewController.h"
 #import "HotQueueViewController.h"
+#import "ShopViewController.h"
 
 
 
@@ -474,6 +475,15 @@
         hotQVC.urlStr = urlStr;
         [self.navigationController pushViewController:hotQVC animated:YES];
         
+    }else if (indexPath.section == 4){
+        if (indexPath.row !=0) {
+            RecommendModel *recommend = _recommendArray[indexPath.row-1];
+            NSString *shopId = [recommend.id stringValue];
+            NSLog(@"shop id:%@",shopId);
+            ShopViewController *shopVC = [[ShopViewController alloc] init];
+            shopVC.shopID = shopId;
+            [self.navigationController pushViewController:shopVC animated:YES];
+        }
     }
 }
 

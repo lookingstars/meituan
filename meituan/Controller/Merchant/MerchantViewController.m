@@ -72,17 +72,23 @@
     //设置普通状态的动画图片
     NSMutableArray *idleImages = [NSMutableArray array];
     for (NSUInteger i = 1; i<=60; ++i) {
-        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_anim__000%zd",i]];
+//        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_anim__000%zd",i]];
+//        [idleImages addObject:image];
+        UIImage *image = [UIImage imageNamed:@"icon_listheader_animation_1"];
         [idleImages addObject:image];
     }
     [self.tableView.gifHeader setImages:idleImages forState:MJRefreshHeaderStateIdle];
     
     //设置即将刷新状态的动画图片
     NSMutableArray *refreshingImages = [NSMutableArray array];
-    for (NSInteger i = 1; i<=3; i++) {
-        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_loading_0%zd",i]];
-        [refreshingImages addObject:image];
-    }
+    UIImage *image1 = [UIImage imageNamed:@"icon_listheader_animation_1"];
+    [refreshingImages addObject:image1];
+    UIImage *image2 = [UIImage imageNamed:@"icon_listheader_animation_2"];
+    [refreshingImages addObject:image2];
+//    for (NSInteger i = 1; i<=3; i++) {
+//        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_loading_0%zd",i]];
+//        [refreshingImages addObject:image];
+//    }
     [self.tableView.gifHeader setImages:refreshingImages forState:MJRefreshHeaderStatePulling];
     
     //设置正在刷新是的动画图片
