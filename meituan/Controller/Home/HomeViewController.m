@@ -302,7 +302,7 @@
             return 160.0;
         }
     }else if (indexPath.section == 3){
-        if (_hotQueueData == nil) {
+        if (_hotQueueData.title == nil) {
             return 0.0;
         }else{
             return 50.0;
@@ -479,7 +479,7 @@
         if (indexPath.row !=0) {
             RecommendModel *recommend = _recommendArray[indexPath.row-1];
             NSString *shopId = [recommend.id stringValue];
-            NSLog(@"shop id:%@",shopId);
+//            NSLog(@"shop id:%@",shopId);
             ShopViewController *shopVC = [[ShopViewController alloc] init];
             shopVC.shopID = shopId;
             [self.navigationController pushViewController:shopVC animated:YES];

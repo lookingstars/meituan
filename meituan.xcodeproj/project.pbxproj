@@ -31,6 +31,12 @@
 		E3513F3C1B4BC10D0071936B /* icon_collect.png in Resources */ = {isa = PBXBuildFile; fileRef = E3513F381B4BC10D0071936B /* icon_collect.png */; };
 		E3513F3D1B4BC10D0071936B /* icon_merchant_share_highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = E3513F391B4BC10D0071936B /* icon_merchant_share_highlighted.png */; };
 		E3513F3E1B4BC10D0071936B /* icon_merchant_share_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = E3513F3A1B4BC10D0071936B /* icon_merchant_share_normal.png */; };
+		E3513F421B4CBFFF0071936B /* ShopImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3513F411B4CBFFF0071936B /* ShopImageCell.m */; };
+		E3513F461B4CC3260071936B /* ShopInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3513F451B4CC3260071936B /* ShopInfoModel.m */; };
+		E3513F4B1B4CEDC30071936B /* icon_deal_anytime_refund@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3513F4A1B4CEDC30071936B /* icon_deal_anytime_refund@2x.png */; };
+		E3513F4E1B4CF0550071936B /* ShopPriceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3513F4D1B4CF0550071936B /* ShopPriceCell.m */; };
+		E3513F511B4CFFA10071936B /* ShopRecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3513F501B4CFFA10071936B /* ShopRecommendModel.m */; };
+		E3513F541B4D08160071936B /* ShopRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3513F531B4D08160071936B /* ShopRecommendCell.m */; };
 		E3D814F21B2AD522005689B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D814F11B2AD522005689B8 /* main.m */; };
 		E3D814F51B2AD522005689B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D814F41B2AD522005689B8 /* AppDelegate.m */; };
 		E3D814F81B2AD522005689B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D814F71B2AD522005689B8 /* ViewController.m */; };
@@ -145,6 +151,17 @@
 		E3513F381B4BC10D0071936B /* icon_collect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_collect.png; sourceTree = "<group>"; };
 		E3513F391B4BC10D0071936B /* icon_merchant_share_highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_merchant_share_highlighted.png; sourceTree = "<group>"; };
 		E3513F3A1B4BC10D0071936B /* icon_merchant_share_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_merchant_share_normal.png; sourceTree = "<group>"; };
+		E3513F401B4CBFFF0071936B /* ShopImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopImageCell.h; sourceTree = "<group>"; };
+		E3513F411B4CBFFF0071936B /* ShopImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopImageCell.m; sourceTree = "<group>"; };
+		E3513F441B4CC3260071936B /* ShopInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopInfoModel.h; sourceTree = "<group>"; };
+		E3513F451B4CC3260071936B /* ShopInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopInfoModel.m; sourceTree = "<group>"; };
+		E3513F4A1B4CEDC30071936B /* icon_deal_anytime_refund@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_deal_anytime_refund@2x.png"; sourceTree = "<group>"; };
+		E3513F4C1B4CF0550071936B /* ShopPriceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopPriceCell.h; sourceTree = "<group>"; };
+		E3513F4D1B4CF0550071936B /* ShopPriceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopPriceCell.m; sourceTree = "<group>"; };
+		E3513F4F1B4CFFA10071936B /* ShopRecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopRecommendModel.h; sourceTree = "<group>"; };
+		E3513F501B4CFFA10071936B /* ShopRecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopRecommendModel.m; sourceTree = "<group>"; };
+		E3513F521B4D08160071936B /* ShopRecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopRecommendCell.h; sourceTree = "<group>"; };
+		E3513F531B4D08160071936B /* ShopRecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopRecommendCell.m; sourceTree = "<group>"; };
 		E3D814EC1B2AD522005689B8 /* meituan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meituan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D814F01B2AD522005689B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D814F11B2AD522005689B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -313,6 +330,30 @@
 			path = Shop;
 			sourceTree = "<group>";
 		};
+		E3513F3F1B4CBFB50071936B /* shop */ = {
+			isa = PBXGroup;
+			children = (
+				E3513F4C1B4CF0550071936B /* ShopPriceCell.h */,
+				E3513F4D1B4CF0550071936B /* ShopPriceCell.m */,
+				E3513F401B4CBFFF0071936B /* ShopImageCell.h */,
+				E3513F411B4CBFFF0071936B /* ShopImageCell.m */,
+				E3513F521B4D08160071936B /* ShopRecommendCell.h */,
+				E3513F531B4D08160071936B /* ShopRecommendCell.m */,
+			);
+			path = shop;
+			sourceTree = "<group>";
+		};
+		E3513F431B4CC30F0071936B /* shop */ = {
+			isa = PBXGroup;
+			children = (
+				E3513F441B4CC3260071936B /* ShopInfoModel.h */,
+				E3513F451B4CC3260071936B /* ShopInfoModel.m */,
+				E3513F4F1B4CFFA10071936B /* ShopRecommendModel.h */,
+				E3513F501B4CFFA10071936B /* ShopRecommendModel.m */,
+			);
+			path = shop;
+			sourceTree = "<group>";
+		};
 		E3D814E31B2AD522005689B8 = {
 			isa = PBXGroup;
 			children = (
@@ -470,6 +511,7 @@
 		E3D8153A1B2AD95E005689B8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E3513F431B4CC30F0071936B /* shop */,
 				E3D815D11B463E8E005689B8 /* Discount */,
 				E3D815991B3D2021005689B8 /* RushDataModel.h */,
 				E3D8159A1B3D2021005689B8 /* RushDataModel.m */,
@@ -570,6 +612,7 @@
 		E3D815441B2AD95E005689B8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E3513F4A1B4CEDC30071936B /* icon_deal_anytime_refund@2x.png */,
 				E3513F371B4BC10D0071936B /* icon_collect_highlighted.png */,
 				E3513F381B4BC10D0071936B /* icon_collect.png */,
 				E3513F391B4BC10D0071936B /* icon_merchant_share_highlighted.png */,
@@ -654,6 +697,7 @@
 		E3D8154A1B2AD95E005689B8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E3513F3F1B4CBFB50071936B /* shop */,
 				E3D815DB1B4661D8005689B8 /* Discount */,
 				E3D8159F1B4235DF005689B8 /* JZMTBtnView.h */,
 				E3D815A01B4235DF005689B8 /* JZMTBtnView.m */,
@@ -858,6 +902,7 @@
 				E3D8155C1B3150BB005689B8 /* icon_tabbar_merchant_normal@2x.png in Resources */,
 				E3D815841B316A59005689B8 /* icon_homepage_beautyCategory.png in Resources */,
 				E3513F3C1B4BC10D0071936B /* icon_collect.png in Resources */,
+				E3513F4B1B4CEDC30071936B /* icon_deal_anytime_refund@2x.png in Resources */,
 				E3D815871B316A59005689B8 /* icon_homepage_foodCategory.png in Resources */,
 				E3D815611B3150BB005689B8 /* icon_tabbar_misc_selected@2x.png in Resources */,
 				E3D815CB1B461B66005689B8 /* todaySpecialHeaderTitleImage@3x.png in Resources */,
@@ -937,18 +982,22 @@
 				E3D8159E1B3D24D2005689B8 /* RushDealsModel.m in Sources */,
 				E3D815A41B423A96005689B8 /* HomeMenuCell.m in Sources */,
 				E3D815B21B43E055005689B8 /* RecommendModel.m in Sources */,
+				E3513F511B4CFFA10071936B /* ShopRecommendModel.m in Sources */,
 				E3513F0F1B4A208B0071936B /* ServiceAdvModel.m in Sources */,
 				E3D814F81B2AD522005689B8 /* ViewController.m in Sources */,
 				E3D815B51B43E714005689B8 /* RecommendCell.m in Sources */,
 				E3513F151B4A299D0071936B /* HomeServiceCell.m in Sources */,
 				E3D815E41B4A1370005689B8 /* MerchantViewController.m in Sources */,
 				E3D814F51B2AD522005689B8 /* AppDelegate.m in Sources */,
+				E3513F541B4D08160071936B /* ShopRecommendCell.m in Sources */,
 				E3513F2B1B4A8B880071936B /* MoreViewController.m in Sources */,
+				E3513F461B4CC3260071936B /* ShopInfoModel.m in Sources */,
 				E3D815951B3B933C005689B8 /* JZMenuCell.m in Sources */,
 				E3513F121B4A27F90071936B /* HomeServiceModel.m in Sources */,
 				E3D815BE1B45124C005689B8 /* DiscountModel.m in Sources */,
 				E3513F361B4BAC6D0071936B /* ShopViewController.m in Sources */,
 				E3D815C41B452C51005689B8 /* DiscountViewController.m in Sources */,
+				E3513F421B4CBFFF0071936B /* ShopImageCell.m in Sources */,
 				E3D815AC1B43CCEA005689B8 /* HotQueueModel.m in Sources */,
 				E3D815D41B4658E7005689B8 /* DisTopicModel.m in Sources */,
 				E3D814F21B2AD522005689B8 /* main.m in Sources */,
@@ -959,6 +1008,7 @@
 				E3513F0C1B4A1EF70071936B /* ImageScrollView.m in Sources */,
 				E3D815DA1B465A74005689B8 /* DisDealModel.m in Sources */,
 				E3513F0B1B4A1EF70071936B /* ImageScrollCell.m in Sources */,
+				E3513F4E1B4CF0550071936B /* ShopPriceCell.m in Sources */,
 				E3D815A11B4235DF005689B8 /* JZMTBtnView.m in Sources */,
 				E3D815981B3BC4FD005689B8 /* InfoViewController.m in Sources */,
 				E3D815DE1B4664F6005689B8 /* DisTopicCell.m in Sources */,

@@ -76,17 +76,20 @@
     for (int i = 0; i < 3; i++) {
         RushDealsModel *rush = rushData[i];
         NSString *imageUrl = rush.mdcLogoUrl;
-        NSString *newPrice = [rush.campaignprice stringValue];
-        NSString *oldPrice = [rush.price stringValue];
+        NSInteger newPrice = [rush.campaignprice integerValue];
+        NSInteger oldPrice = [rush.price integerValue];
         
         UIImageView *imageView = (UIImageView *)[self viewWithTag:20+i];
         [imageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:nil];
         
         UILabel *newPriceLabel = (UILabel *)[self viewWithTag:50+i];
-        newPriceLabel.text = [NSString stringWithFormat:@"%@元",newPrice];
+        newPriceLabel.text = [NSString stringWithFormat:@"%ld元",newPrice];
+//        newPriceLabel.text = [NSString stringWithFormat:@"%@元",rush.campaignprice];
         
         UILabel *oldPriceLabel = (UILabel *)[self viewWithTag:70+i];
-        NSString *oldStr = [NSString stringWithFormat:@"%@元",oldPrice];
+        NSString *oldStr = [NSString stringWithFormat:@"%ld元",oldPrice];
+//        NSString *oldStr = [NSString stringWithFormat:@"%@元",rush.price];
+        NSLog(@"=====%@",rush.price);
         
         //显示下划线
         //中划线

@@ -44,6 +44,9 @@ typedef void(^FailureBlock)(NSString *error);
 #pragma mark - 店铺详情
 -(void)getShopResult:(NSDictionary *)userInfo url:(NSString *)url successBlock:(SuccessBlock)successBlock failureBlock:(FailureBlock)failureBlock;
 
+#pragma mark - 店铺看了还看了
+-(void)getShopRecommendResult:(NSDictionary *)userInfo url:(NSString *)url successBlock:(SuccessBlock)successBlock failureBlock:(FailureBlock)failureBlock;
+
 
 
 
