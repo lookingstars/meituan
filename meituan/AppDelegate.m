@@ -9,9 +9,10 @@
 #import "AppDelegate.h"
 #import "HomeViewController.h"
 #import "InfoViewController.h"
-#import "MerchantViewController.h"
 #import "MineViewController.h"
 #import "MoreViewController.h"
+#import "JZOnSiteViewController.h"
+#import "JZMerchantViewController.h"
 
 #import <CoreLocation/CoreLocation.h>
 
@@ -76,9 +77,9 @@
     UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:VC1];
     
 //    InfoViewController *VC2 = [[InfoViewController alloc] init];
-    MerchantViewController *VC2 = [[MerchantViewController alloc] init];
+    JZOnSiteViewController *VC2 = [[JZOnSiteViewController alloc] init];
     UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:VC2];
-    UIViewController *VC3 = [[UIViewController alloc] init];
+    JZMerchantViewController *VC3 = [[JZMerchantViewController alloc] init];
     UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:VC3];
     MineViewController *VC4 = [[MineViewController alloc] init];
     UINavigationController *nav4 = [[UINavigationController alloc] initWithRootViewController:VC4];

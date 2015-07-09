@@ -1,12 +1,12 @@
 //
-//  MerchantViewController.m
+//  JZOnSiteViewController.m
 //  meituan
 //
-//  Created by jinzelu on 15/7/6.
+//  Created by jinzelu on 15/7/9.
 //  Copyright (c) 2015年 jinzelu. All rights reserved.
 //
 
-#import "MerchantViewController.h"
+#import "JZOnSiteViewController.h"
 #import "NetworkSingleton.h"
 #import "ImageScrollCell.h"
 #import "MJExtension.h"
@@ -16,10 +16,9 @@
 #import "HomeServiceCell.h"
 #import "AppDelegate.h"
 
-
 #import "HotQueueViewController.h"
 
-@interface MerchantViewController ()<UITableViewDataSource,UITableViewDelegate,HomeServiceDelegate>
+@interface JZOnSiteViewController ()<UITableViewDataSource,UITableViewDelegate,HomeServiceDelegate>
 {
     NSMutableArray *_advArray;//广告数据源
     NSMutableArray *_advImageUrlArray;//广告图片数组
@@ -30,7 +29,7 @@
 
 @end
 
-@implementation MerchantViewController
+@implementation JZOnSiteViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,7 +39,6 @@
     
     [self initData];
     [self initViews];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,8 +70,8 @@
     //设置普通状态的动画图片
     NSMutableArray *idleImages = [NSMutableArray array];
     for (NSUInteger i = 1; i<=60; ++i) {
-//        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_anim__000%zd",i]];
-//        [idleImages addObject:image];
+        //        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_anim__000%zd",i]];
+        //        [idleImages addObject:image];
         UIImage *image = [UIImage imageNamed:@"icon_listheader_animation_1"];
         [idleImages addObject:image];
     }
@@ -85,10 +83,10 @@
     [refreshingImages addObject:image1];
     UIImage *image2 = [UIImage imageNamed:@"icon_listheader_animation_2"];
     [refreshingImages addObject:image2];
-//    for (NSInteger i = 1; i<=3; i++) {
-//        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_loading_0%zd",i]];
-//        [refreshingImages addObject:image];
-//    }
+    //    for (NSInteger i = 1; i<=3; i++) {
+    //        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_loading_0%zd",i]];
+    //        [refreshingImages addObject:image];
+    //    }
     [self.tableView.gifHeader setImages:refreshingImages forState:MJRefreshHeaderStatePulling];
     
     //设置正在刷新是的动画图片
@@ -232,7 +230,7 @@
         
         NSString *str1 = [NSString stringWithFormat:@"%@ci=1&f=iphone&msid=48E2B810-805D-4821-9CDD-D5C9E01BC98A2015-07-06-14-32112&token=p19ukJltGhla4y5Jryb1jgCdKjsAAAAAsgAAADHFD3UYGxaY2FlFPQXQj2wCyCrhhn7VVB-KpG_U3-clHlvsLM8JRrnZK35y8UU3DQ&userid=104108621&utm_campaign=AgroupBgroupD100Fab_chunceshishuju__a__a___b1junglehomepagecatesort__b__leftflow___ab_gxhceshi__nostrategy__leftflow___ab_gxhceshi0202__b__a___ab_pindaochangsha__a__leftflow___ab_xinkeceshi__b__leftflow___ab_gxtest__gd__leftflow___ab_waimaiwending__a__a___ab_gxh_82__nostrategy__leftflow___ab_pindaoshenyang__a__leftflow___i_group_5_2_deallist_poitype__d__d___ab_b_food_57_purepoilist_extinfo__a__a___ab_pindaoquxincelue0630__b__b1___ab_i_group_5_3_poidetaildeallist__a__b___a20141120nanning__m1__leftflow___ab_waimaizhanshi__b__b1___ab_i_group_5_5_onsite__b__b___ab_i_group_5_6_searchkuang__a__leftflowGonsite&utm_content=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&utm_medium=iphone&utm_source=AppStore&utm_term=5.7&uuid=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&version_name=5.7&lat=%f&lng=%f",flagStr ,delegate.latitude,delegate.longitude];
         NSString *urlStr = [NSString stringWithFormat:@"%@%@",url,str1];
-//        NSLog(@"urlstr:%@",urlStr);
+        //        NSLog(@"urlstr:%@",urlStr);
         
         HotQueueViewController *webView = [[HotQueueViewController alloc] init];
         webView.urlStr = urlStr;
@@ -243,6 +241,8 @@
         
     }
 }
+
+
 
 
 

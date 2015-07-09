@@ -37,6 +37,8 @@
 		E3513F4E1B4CF0550071936B /* ShopPriceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3513F4D1B4CF0550071936B /* ShopPriceCell.m */; };
 		E3513F511B4CFFA10071936B /* ShopRecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3513F501B4CFFA10071936B /* ShopRecommendModel.m */; };
 		E3513F541B4D08160071936B /* ShopRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3513F531B4D08160071936B /* ShopRecommendCell.m */; };
+		E3513F5B1B4E11890071936B /* JZOnSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3513F5A1B4E11890071936B /* JZOnSiteViewController.m */; };
+		E3513F5E1B4E128A0071936B /* JZMerchantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3513F5D1B4E128A0071936B /* JZMerchantViewController.m */; };
 		E3D814F21B2AD522005689B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D814F11B2AD522005689B8 /* main.m */; };
 		E3D814F51B2AD522005689B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D814F41B2AD522005689B8 /* AppDelegate.m */; };
 		E3D814F81B2AD522005689B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D814F71B2AD522005689B8 /* ViewController.m */; };
@@ -103,7 +105,6 @@
 		E3D815DA1B465A74005689B8 /* DisDealModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D815D91B465A74005689B8 /* DisDealModel.m */; };
 		E3D815DE1B4664F6005689B8 /* DisTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D815DD1B4664F6005689B8 /* DisTopicCell.m */; };
 		E3D815E11B46857D005689B8 /* HotQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D815E01B46857D005689B8 /* HotQueueViewController.m */; };
-		E3D815E41B4A1370005689B8 /* MerchantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D815E31B4A1370005689B8 /* MerchantViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,10 @@
 		E3513F501B4CFFA10071936B /* ShopRecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopRecommendModel.m; sourceTree = "<group>"; };
 		E3513F521B4D08160071936B /* ShopRecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopRecommendCell.h; sourceTree = "<group>"; };
 		E3513F531B4D08160071936B /* ShopRecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopRecommendCell.m; sourceTree = "<group>"; };
+		E3513F591B4E11890071936B /* JZOnSiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZOnSiteViewController.h; sourceTree = "<group>"; };
+		E3513F5A1B4E11890071936B /* JZOnSiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZOnSiteViewController.m; sourceTree = "<group>"; };
+		E3513F5C1B4E128A0071936B /* JZMerchantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZMerchantViewController.h; sourceTree = "<group>"; };
+		E3513F5D1B4E128A0071936B /* JZMerchantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZMerchantViewController.m; sourceTree = "<group>"; };
 		E3D814EC1B2AD522005689B8 /* meituan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meituan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D814F01B2AD522005689B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D814F11B2AD522005689B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -259,8 +264,6 @@
 		E3D815DD1B4664F6005689B8 /* DisTopicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisTopicCell.m; sourceTree = "<group>"; };
 		E3D815DF1B46857D005689B8 /* HotQueueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotQueueViewController.h; sourceTree = "<group>"; };
 		E3D815E01B46857D005689B8 /* HotQueueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotQueueViewController.m; sourceTree = "<group>"; };
-		E3D815E21B4A1370005689B8 /* MerchantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerchantViewController.h; sourceTree = "<group>"; };
-		E3D815E31B4A1370005689B8 /* MerchantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerchantViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,6 +357,15 @@
 			path = shop;
 			sourceTree = "<group>";
 		};
+		E3513F581B4E11780071936B /* Onsite */ = {
+			isa = PBXGroup;
+			children = (
+				E3513F591B4E11890071936B /* JZOnSiteViewController.h */,
+				E3513F5A1B4E11890071936B /* JZOnSiteViewController.m */,
+			);
+			path = Onsite;
+			sourceTree = "<group>";
+		};
 		E3D814E31B2AD522005689B8 = {
 			isa = PBXGroup;
 			children = (
@@ -424,11 +436,11 @@
 		E3D815321B2AD95E005689B8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E3513F581B4E11780071936B /* Onsite */,
 				E3D815331B2AD95E005689B8 /* Home */,
 				E3D815341B2AD95E005689B8 /* Merchant */,
 				E3D815351B2AD95E005689B8 /* Mine */,
 				E3D815361B2AD95E005689B8 /* More */,
-				E3D815371B2AD95E005689B8 /* Onsite */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -456,8 +468,8 @@
 			children = (
 				E3D815961B3BC4FD005689B8 /* InfoViewController.h */,
 				E3D815971B3BC4FD005689B8 /* InfoViewController.m */,
-				E3D815E21B4A1370005689B8 /* MerchantViewController.h */,
-				E3D815E31B4A1370005689B8 /* MerchantViewController.m */,
+				E3513F5C1B4E128A0071936B /* JZMerchantViewController.h */,
+				E3513F5D1B4E128A0071936B /* JZMerchantViewController.m */,
 			);
 			path = Merchant;
 			sourceTree = "<group>";
@@ -478,13 +490,6 @@
 				E3513F2A1B4A8B880071936B /* MoreViewController.m */,
 			);
 			path = More;
-			sourceTree = "<group>";
-		};
-		E3D815371B2AD95E005689B8 /* Onsite */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Onsite;
 			sourceTree = "<group>";
 		};
 		E3D815381B2AD95E005689B8 /* DB */ = {
@@ -987,13 +992,13 @@
 				E3D814F81B2AD522005689B8 /* ViewController.m in Sources */,
 				E3D815B51B43E714005689B8 /* RecommendCell.m in Sources */,
 				E3513F151B4A299D0071936B /* HomeServiceCell.m in Sources */,
-				E3D815E41B4A1370005689B8 /* MerchantViewController.m in Sources */,
 				E3D814F51B2AD522005689B8 /* AppDelegate.m in Sources */,
 				E3513F541B4D08160071936B /* ShopRecommendCell.m in Sources */,
 				E3513F2B1B4A8B880071936B /* MoreViewController.m in Sources */,
 				E3513F461B4CC3260071936B /* ShopInfoModel.m in Sources */,
 				E3D815951B3B933C005689B8 /* JZMenuCell.m in Sources */,
 				E3513F121B4A27F90071936B /* HomeServiceModel.m in Sources */,
+				E3513F5B1B4E11890071936B /* JZOnSiteViewController.m in Sources */,
 				E3D815BE1B45124C005689B8 /* DiscountModel.m in Sources */,
 				E3513F361B4BAC6D0071936B /* ShopViewController.m in Sources */,
 				E3D815C41B452C51005689B8 /* DiscountViewController.m in Sources */,
@@ -1014,6 +1019,7 @@
 				E3D815DE1B4664F6005689B8 /* DisTopicCell.m in Sources */,
 				E3D815911B3173AA005689B8 /* NetworkSingleton.m in Sources */,
 				E3513F181B4A76120071936B /* MineViewController.m in Sources */,
+				E3513F5E1B4E128A0071936B /* JZMerchantViewController.m in Sources */,
 				E3D8159B1B3D2021005689B8 /* RushDataModel.m in Sources */,
 				E3D815E11B46857D005689B8 /* HotQueueViewController.m in Sources */,
 				E3D815C11B451404005689B8 /* DiscountCell.m in Sources */,
