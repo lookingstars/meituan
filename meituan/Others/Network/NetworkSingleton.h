@@ -60,6 +60,12 @@ typedef void(^FailureBlock)(NSString *error);
 
 
 
+#pragma mark - 商家
+
+#pragma mark - 获取商家列表
+-(void)getMerchantListResult:(NSDictionary *)userInfo url:(NSString *)url successBlock:(SuccessBlock)successBlock failureBlock:(FailureBlock)failureBlock;
+
+
 
 
 
