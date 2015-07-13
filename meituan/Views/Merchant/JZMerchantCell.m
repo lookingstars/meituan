@@ -11,9 +11,11 @@
 @interface JZMerchantCell ()
 {
     UIImageView *_merchantImage;
-    UILabel *_merchantNameLabel;
+    UILabel *_merchantNameLabel;//店名
     
-    UILabel *_cateNameLabel;
+    UILabel *_cateNameLabel;//店名
+    
+    UILabel *_evaluateLabel;//评价个数
     
 }
 
@@ -41,6 +43,27 @@
         _cateNameLabel.font = [UIFont systemFontOfSize:13];
         _cateNameLabel.textColor = [UIColor lightGrayColor];
         [self.contentView addSubview:_cateNameLabel];
+        
+        //星星
+        for (int i = 0; i < 5; i++) {
+            UIImageView *starImg = [[UIImageView alloc] initWithFrame:CGRectMake(110+i*14, 43, 12, 12)];
+            starImg.tag = 30+i;
+            [starImg setImage:[UIImage imageNamed:@"icon_feedCell_star_empty"]];
+            [self.contentView addSubview:starImg];
+        }
+        
+        //评价个数
+        _evaluateLabel = [[UILabel alloc] initWithFrame:CGRectMake(110+5*14, 40, 80, 20)];
+        _evaluateLabel.font = [UIFont systemFontOfSize:13];
+        _evaluateLabel.textColor = [UIColor lightGrayColor];
+        [self.contentView addSubview:_evaluateLabel];
+        
+        
+        //下划线
+        UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 91.5, screen_width, 0.5)];
+        lineView.backgroundColor = RGB(192, 192, 192);
+        [self.contentView addSubview:lineView];
+        
     }
     return self;
 }
@@ -63,6 +86,23 @@
     
     _merchantNameLabel.text = jzMerM.name;
     _cateNameLabel.text = [NSString stringWithFormat:@"%@  %@",jzMerM.cateName,jzMerM.areaName];
+    
+    _evaluateLabel.text = [NSString stringWithFormat:@"%@评价",jzMerM.markNumbers];
+    
+//    NSLog(@"星星：%@",jzMerM.avgScore);
+    double scoreD = [jzMerM.avgScore doubleValue];
+    int scoreI = ceil(scoreD);
+    
+    for (int i = 0; i < 5; i++) {
+        UIImageView *imageview = (UIImageView *)[self.contentView viewWithTag:30+i];
+        [imageview setImage:[UIImage imageNamed:@"icon_feedCell_star_empty"]];
+    }
+    
+    for (int i = 0; i < scoreI; i++) {
+        UIImageView *imageview = (UIImageView *)[self.contentView viewWithTag:30+i];
+        [imageview setImage:[UIImage imageNamed:@"icon_feedCell_star_full"]];
+    }
+    
 }
 
 
