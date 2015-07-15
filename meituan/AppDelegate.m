@@ -133,7 +133,7 @@
     
     //友盟初始化
     [UMSocialData setAppKey:UMAPPKEY];
-    [UMSocialWechatHandler setWXAppId:@"wxd930ea5d5a258f4f" appSecret:@"db426a9829e4b49a0dcac7b4162da6b6" url:@"http://www.fityun.cn/"];
+    [UMSocialWechatHandler setWXAppId:@"wx3b1ec5fee404cc3d" appSecret:@"e97199313f931035a765ee433e335dbb" url:@"http://www.fityun.cn/"];
     
     
     
