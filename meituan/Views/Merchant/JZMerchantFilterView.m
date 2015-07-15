@@ -12,6 +12,8 @@
 #import "MJExtension.h"
 #import "JZMerCateGroupModel.h"
 
+#import "JZKindFilterCell.h"
+
 @interface JZMerchantFilterView ()<UITableViewDataSource,UITableViewDelegate>
 {
     NSMutableArray *_bigGroupArray;//左边分组tableview的数据源
@@ -48,6 +50,7 @@
     self.tableViewOfGroup.delegate = self;
     self.tableViewOfGroup.dataSource = self;
     self.tableViewOfGroup.backgroundColor = [UIColor whiteColor];
+    self.tableViewOfGroup.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self addSubview:self.tableViewOfGroup];
     
     //详情
@@ -56,6 +59,7 @@
     self.tableViewOfDetail.dataSource = self;
     self.tableViewOfDetail.delegate = self;
     self.tableViewOfDetail.backgroundColor = RGB(242, 242, 242);
+    self.tableViewOfDetail.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self addSubview:self.tableViewOfDetail];
     
     
@@ -111,23 +115,40 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView.tag == 10) {
         static NSString *cellIndentifier = @"filterCell1";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+        JZKindFilterCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
         if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
+            cell = [[JZKindFilterCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier withFrame:CGRectMake(0, 0, screen_width/2, 42)];
         }
         
         JZMerCateGroupModel *cateM = _bigGroupArray[indexPath.row];
-        cell.textLabel.text = cateM.name;
+        [cell setGroupM:cateM];
+        
+        cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
+        cell.selectedBackgroundView.backgroundColor = RGB(239, 239, 239);
         return cell;
     }else{
         static NSString *cellIndentifier = @"filterCell2";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
         if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIndentifier];
+            //下划线
+            UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 41.5, cell.frame.size.width, 0.5)];
+            lineView.backgroundColor = RGB(192, 192, 192);
+            [cell.contentView addSubview:lineView];
         }
         
         JZMerCateGroupModel *cateM = (JZMerCateGroupModel *)_bigGroupArray[_bigSelectedIndex];
         cell.textLabel.text = [cateM.list[indexPath.row] objectForKey:@"name"];
+        
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",[cateM.list[indexPath.row] objectForKey:@"count"]];
+        
+        cell.textLabel.font = [UIFont systemFontOfSize:15];
+        cell.detailTextLabel.font = [UIFont systemFontOfSize:13];
+        
+        
+        cell.backgroundColor = RGB(242, 242, 242);
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         return cell;
     }
 }
@@ -138,9 +159,24 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView.tag == 10) {
         _bigSelectedIndex = indexPath.row;
-        [self.tableViewOfDetail reloadData];
+        
+        JZMerCateGroupModel *cateM = (JZMerCateGroupModel *)_bigGroupArray[_bigSelectedIndex];
+        if (cateM.list == nil) {
+            [self.delegate tableView:tableView didSelectRowAtIndexPath:indexPath withId:cateM.id withName:cateM.name];
+        }else{
+            [self.tableViewOfDetail reloadData];
+        }
+    }else{
+        _smallSelectedIndex = indexPath.row;
+        JZMerCateGroupModel *cateM = (JZMerCateGroupModel *)_bigGroupArray[_bigSelectedIndex];
+        
+        NSDictionary *dic = cateM.list[_smallSelectedIndex];
+        NSNumber *ID = [dic objectForKey:@"id"];
+        NSString *name = [dic objectForKey:@"name"];
+        [self.delegate tableView:tableView didSelectRowAtIndexPath:indexPath withId:ID withName:name];
     }
 }
+
 
 
 /*

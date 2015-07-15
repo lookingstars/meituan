@@ -28,6 +28,8 @@
 #import "HotQueueViewController.h"
 #import "ShopViewController.h"
 
+#import "JZMapViewControlle.h"
+
 
 
 @interface HomeViewController ()<UITableViewDataSource, UITableViewDelegate,DiscountDelegate,RushDelegate>
@@ -156,7 +158,8 @@
 
 
 -(void)OnMapBtnTap:(UIButton *)sender{
-    [self refreshData];
+    JZMapViewControlle *JZMapVC = [[JZMapViewControlle alloc] init];
+    [self.navigationController pushViewController:JZMapVC animated:YES];
 }
 
 -(void)refreshData{

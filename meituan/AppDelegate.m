@@ -15,6 +15,9 @@
 #import "JZMerchantViewController.h"
 
 #import <CoreLocation/CoreLocation.h>
+#import "UMSocial.h"
+#import "UMSocialWechatHandler.h"
+
 
 @interface AppDelegate ()<CLLocationManagerDelegate>
 {
@@ -125,6 +128,20 @@
     //改变UITabBarItem字体颜色
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGB(54, 185,175),UITextAttributeTextColor, nil] forState:UIControlStateSelected];
     
+    
+    
+    
+    //友盟初始化
+    [UMSocialData setAppKey:UMAPPKEY];
+    [UMSocialWechatHandler setWXAppId:@"wxd930ea5d5a258f4f" appSecret:@"db426a9829e4b49a0dcac7b4162da6b6" url:@"http://www.fityun.cn/"];
+    
+    
+    
+    
+    
+    
+    
+    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [self.window makeKeyAndVisible];
     
@@ -174,6 +191,15 @@
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
     NSLog(@"定位失败");
+}
+
+
+//友盟微信分享
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+    return [UMSocialSnsService handleOpenURL:url];
+}
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    return [UMSocialSnsService handleOpenURL:url];
 }
 
 
