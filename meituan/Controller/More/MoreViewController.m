@@ -83,6 +83,7 @@
     cell.textLabel.text = [_dataSource[indexPath.section] objectAtIndex:indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.font = [UIFont systemFontOfSize:15];
     return cell;
 }
 

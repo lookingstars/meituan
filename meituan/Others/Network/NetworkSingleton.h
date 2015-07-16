@@ -23,6 +23,10 @@ typedef void(^FailureBlock)(NSString *error);
 -(AFHTTPRequestOperationManager *)baseHtppRequest;
 
 
+#pragma mark - 获取广告页图片
+-(void)getAdvLoadingImage:(NSDictionary *)userInfo url:(NSString *)url successBlock:(SuccessBlock)successBlock failureBlock:(FailureBlock)failureBlock;
+
+
 #pragma mark - 团购模块接口
 
 #pragma mark - 抢购
