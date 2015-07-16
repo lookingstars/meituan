@@ -73,6 +73,13 @@ typedef void(^FailureBlock)(NSString *error);
 
 
 
+#pragma mark - 团购地图
+
+#pragma mark - 获取附近商家列表
+-(void)getAroundMerchantResult:(NSDictionary *)userInfo url:(NSString *)url successBlock:(SuccessBlock)successBlock failureBlock:(FailureBlock)failureBlock;
+
+
+
 
 
 
