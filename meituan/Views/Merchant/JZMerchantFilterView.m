@@ -162,6 +162,7 @@
         
         JZMerCateGroupModel *cateM = (JZMerCateGroupModel *)_bigGroupArray[_bigSelectedIndex];
         if (cateM.list == nil) {
+            [self.tableViewOfDetail reloadData];
             [self.delegate tableView:tableView didSelectRowAtIndexPath:indexPath withId:cateM.id withName:cateM.name];
         }else{
             [self.tableViewOfDetail reloadData];

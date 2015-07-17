@@ -262,7 +262,7 @@
             
             if (_shopInfoM.mname != nil) {
                 NSString *imgUrl = [_shopInfoM.imgurl stringByReplacingOccurrencesOfString:@"w.h" withString:@"300.0"];
-                NSLog(@"店铺图片：%@  %@",imgUrl, _shopInfoM.imgurl);
+//                NSLog(@"店铺图片：%@  %@",imgUrl, _shopInfoM.imgurl);
                 [cell.shopImageView sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:[UIImage imageNamed:@"bg_customReview_image_default"]];
                 cell.shopNameLabel.text = _shopInfoM.mname;
                 cell.shopTitleLabel.text = _shopInfoM.title;
