@@ -113,6 +113,9 @@
 		E36331A01B5785B4008C19BB /* icon_mine_unpaid_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = E36331851B5785B4008C19BB /* icon_mine_unpaid_disabled.png */; };
 		E36331A11B5785B4008C19BB /* icon_mine_voucher.png in Resources */ = {isa = PBXBuildFile; fileRef = E36331861B5785B4008C19BB /* icon_mine_voucher.png */; };
 		E36331A21B5785B4008C19BB /* icon_misc_new_version@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E36331871B5785B4008C19BB /* icon_misc_new_version@2x.png */; };
+		E36331AD1B58D96B008C19BB /* JZMerchantDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E36331AC1B58D96B008C19BB /* JZMerchantDetailViewController.m */; };
+		E36331B01B58E518008C19BB /* JZMerDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E36331AF1B58E518008C19BB /* JZMerDetailModel.m */; };
+		E36331B31B58E90B008C19BB /* JZMerDetailImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E36331B21B58E90B008C19BB /* JZMerDetailImageCell.m */; };
 		E39571741B54B1FF0064A84F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39571731B54B1FF0064A84F /* Security.framework */; };
 		E39571761B54B2150064A84F /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E39571751B54B2150064A84F /* libiconv.dylib */; };
 		E39571781B54B2250064A84F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39571771B54B2250064A84F /* SystemConfiguration.framework */; };
@@ -355,6 +358,12 @@
 		E36331851B5785B4008C19BB /* icon_mine_unpaid_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_mine_unpaid_disabled.png; sourceTree = "<group>"; };
 		E36331861B5785B4008C19BB /* icon_mine_voucher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_mine_voucher.png; sourceTree = "<group>"; };
 		E36331871B5785B4008C19BB /* icon_misc_new_version@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_misc_new_version@2x.png"; sourceTree = "<group>"; };
+		E36331AB1B58D96B008C19BB /* JZMerchantDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZMerchantDetailViewController.h; sourceTree = "<group>"; };
+		E36331AC1B58D96B008C19BB /* JZMerchantDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZMerchantDetailViewController.m; sourceTree = "<group>"; };
+		E36331AE1B58E518008C19BB /* JZMerDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZMerDetailModel.h; sourceTree = "<group>"; };
+		E36331AF1B58E518008C19BB /* JZMerDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZMerDetailModel.m; sourceTree = "<group>"; };
+		E36331B11B58E90B008C19BB /* JZMerDetailImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZMerDetailImageCell.h; sourceTree = "<group>"; };
+		E36331B21B58E90B008C19BB /* JZMerDetailImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZMerDetailImageCell.m; sourceTree = "<group>"; };
 		E39571731B54B1FF0064A84F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		E39571751B54B2150064A84F /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		E39571771B54B2250064A84F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -489,8 +498,8 @@
 				E39571801B54B26A0064A84F /* libstdc++.dylib in Frameworks */,
 				E395717E1B54B25C0064A84F /* CoreTelephony.framework in Frameworks */,
 				E39571901B54B2A90064A84F /* TencentOpenAPI.framework in Frameworks */,
-				E395717C1B54B2500064A84F /* libsqlite3.dylib in Frameworks */,
 				E39571921B54B2A90064A84F /* libSocialWechat.a in Frameworks */,
+				E395717C1B54B2500064A84F /* libsqlite3.dylib in Frameworks */,
 				E395717A1B54B23E0064A84F /* CoreGraphics.framework in Frameworks */,
 				E39571781B54B2250064A84F /* SystemConfiguration.framework in Frameworks */,
 				E39571761B54B2150064A84F /* libiconv.dylib in Frameworks */,
@@ -841,6 +850,8 @@
 				E3D815971B3BC4FD005689B8 /* InfoViewController.m */,
 				E3513F5C1B4E128A0071936B /* JZMerchantViewController.h */,
 				E3513F5D1B4E128A0071936B /* JZMerchantViewController.m */,
+				E36331AB1B58D96B008C19BB /* JZMerchantDetailViewController.h */,
+				E36331AC1B58D96B008C19BB /* JZMerchantDetailViewController.m */,
 			);
 			path = Merchant;
 			sourceTree = "<group>";
@@ -915,6 +926,8 @@
 				E3513F6C1B4E40BF0071936B /* JZMerchantModel.m */,
 				E3513F861B4FC9CC0071936B /* JZMerCateGroupModel.h */,
 				E3513F871B4FC9CC0071936B /* JZMerCateGroupModel.m */,
+				E36331AE1B58E518008C19BB /* JZMerDetailModel.h */,
+				E36331AF1B58E518008C19BB /* JZMerDetailModel.m */,
 			);
 			path = Merchant;
 			sourceTree = "<group>";
@@ -1158,6 +1171,8 @@
 				E3513F841B4FB19E0071936B /* JZMerchantFilterView.m */,
 				E3513F891B53568D0071936B /* JZKindFilterCell.h */,
 				E3513F8A1B53568D0071936B /* JZKindFilterCell.m */,
+				E36331B11B58E90B008C19BB /* JZMerDetailImageCell.h */,
+				E36331B21B58E90B008C19BB /* JZMerDetailImageCell.m */,
 			);
 			path = Merchant;
 			sourceTree = "<group>";
@@ -1522,6 +1537,7 @@
 				E3D815A91B438CA1005689B8 /* RushCell.m in Sources */,
 				E3513F0C1B4A1EF70071936B /* ImageScrollView.m in Sources */,
 				E36331631B562259008C19BB /* CustomAnnotationView.m in Sources */,
+				E36331B01B58E518008C19BB /* JZMerDetailModel.m in Sources */,
 				E3D815DA1B465A74005689B8 /* DisDealModel.m in Sources */,
 				E3513F0B1B4A1EF70071936B /* ImageScrollCell.m in Sources */,
 				E3513F4E1B4CF0550071936B /* ShopPriceCell.m in Sources */,
@@ -1530,6 +1546,8 @@
 				E3D815981B3BC4FD005689B8 /* InfoViewController.m in Sources */,
 				E3D815DE1B4664F6005689B8 /* DisTopicCell.m in Sources */,
 				E3D815911B3173AA005689B8 /* NetworkSingleton.m in Sources */,
+				E36331B31B58E90B008C19BB /* JZMerDetailImageCell.m in Sources */,
+				E36331AD1B58D96B008C19BB /* JZMerchantDetailViewController.m in Sources */,
 				E363316A1B5653CE008C19BB /* JZMAAroundModel.m in Sources */,
 				E3513F181B4A76120071936B /* MineViewController.m in Sources */,
 				E3513F6D1B4E40BF0071936B /* JZMerchantModel.m in Sources */,

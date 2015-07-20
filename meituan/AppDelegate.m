@@ -121,6 +121,7 @@
         
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            //加载启动广告并保存到本地沙盒，因为保存的图片较大，每次运行都要保存，所以注掉了
 //            [self getLoadingImage];
         });
     }else{
@@ -132,12 +133,10 @@
 }
 
 -(void)removeAdvImage{
-    NSLog(@"removeFromSuperview1111111");
     [UIView animateWithDuration:0.3f animations:^{
         _advImage.transform = CGAffineTransformMakeScale(0.5f, 0.5f);
         _advImage.alpha = 0.f;
     } completion:^(BOOL finished) {
-        NSLog(@"removeFromSuperview22222");
         [_advImage removeFromSuperview];
     }];
 }

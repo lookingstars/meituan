@@ -15,6 +15,7 @@
 #import "MJRefresh.h"
 
 #import "JZMerchantFilterView.h"
+#import "JZMerchantDetailViewController.h"
 
 
 @interface JZMerchantViewController ()<UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate,JZMerchantFilterDelegate>
@@ -431,7 +432,16 @@
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    JZMerchantModel *jzMerM = _MerchantArray[indexPath.row];
+    NSLog(@"poiid:%@",jzMerM.poiid);
+    
+    JZMerchantDetailViewController *jzMerchantDVC = [[JZMerchantDetailViewController alloc] init];
+    jzMerchantDVC.poiid = jzMerM.poiid;
+    [self.navigationController pushViewController:jzMerchantDVC animated:YES];
+    
 }
+
+
 
 
 
