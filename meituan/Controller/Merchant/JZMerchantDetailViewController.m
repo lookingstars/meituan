@@ -201,8 +201,29 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
+            //位置坐标
+            UIImageView *locationImgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 18, 20, 20)];
+            [locationImgView setImage:[UIImage imageNamed:@"icon_merchant_location"]];
+            [cell addSubview:locationImgView];
+            //位置信息
+            UILabel *locationLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 4, screen_width-40-90, 50)];
+            locationLabel.tag = 200;
+            locationLabel.textColor = [UIColor grayColor];
+            locationLabel.numberOfLines = 2;
+            [cell addSubview:locationLabel];
+            //
+            UIImageView *telImgView = [[UIImageView alloc] initWithFrame:CGRectMake(screen_width-35, 15, 19, 25)];
+            [telImgView setImage:[UIImage imageNamed:@"icon_deal_phone"]];
+            [cell addSubview:telImgView];
         }
         
+        if (_dataSourceArray.count > 0) {
+            JZMerDetailModel *jzMerDM = _dataSourceArray[0];
+            UILabel *locationLabel = (UILabel *)[cell viewWithTag:200];
+            locationLabel.text = jzMerDM.addr;
+        }
+        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
