@@ -20,5 +20,6 @@
 @property (nonatomic, strong) NSNumber *value;/** <  原价 */
 @property (nonatomic, strong) NSNumber *rating;/** <  评分 */
 @property (nonatomic, strong) NSNumber *rate_count;
+@property (nonatomic, strong) NSNumber *id;
 
 @end

@@ -15,6 +15,7 @@
 #import "MJExtension.h"
 #import "JZMerAroundGroupModel.h"
 #import "JZMerAroundGroupCell.h"
+#import "ShopViewController.h"
 
 @interface JZMerchantDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -80,7 +81,7 @@
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(screen_width/2-80, 30, 160, 30)];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
     //    _titleLabel.textColor = [UIColor whiteColor];
-    _titleLabel.text = @"团购详情";
+    _titleLabel.text = @"商家详情";
     [backView addSubview:_titleLabel];
     
     //收藏
@@ -309,6 +310,17 @@
 }
 
 #pragma mark - UITableViewDelegate
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 2) {
+        if (indexPath.row>0) {
+            JZMerAroundGroupModel *jzAroundM = _dealsArray[indexPath.row-1];
+            NSString *shopID = [jzAroundM.id stringValue];
+            ShopViewController *shopVC = [[ShopViewController alloc] init];
+            shopVC.shopID = shopID;
+            [self.navigationController pushViewController:shopVC animated:YES];
+        }
+    }
+}
 
 
 
