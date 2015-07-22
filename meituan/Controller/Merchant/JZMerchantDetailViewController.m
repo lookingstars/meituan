@@ -17,6 +17,8 @@
 #import "JZMerAroundGroupCell.h"
 #import "ShopViewController.h"
 
+#import "UMSocial.h"
+
 @interface JZMerchantDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     UILabel *_titleLabel;
@@ -115,7 +117,30 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+//响应事件
 -(void)OnShareBtn:(UIButton *)sender{
+    
+    
+    //    [UMSocialSnsService presentSnsIconSheetView:self appKey:UMAPPKEY shareText:@"测试高仿分享" shareImage:[UIImage imageNamed:@"bg_customReview_image_default"] shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToQzone, nil] delegate:self];
+    [UMSocialSnsService presentSnsIconSheetView:self appKey:UMAPPKEY shareText:@"在美国被禁的网站，请偷偷看" shareImage:[UIImage imageNamed:@"m1.jpg"] shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToRenren,UMShareToWechatTimeline,UMShareToWechatSession, nil] delegate:self];
+    
+    
+    //1.微信分享
+    //1.1使用UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite分别代表微信好友、微信朋友圈、微信收藏
+    //    [[UMSocialDataService defaultDataService]  postSNSWithTypes:@[UMShareToWechatSession] content:@"分享内嵌文字" image:nil location:nil urlResource:nil presentedController:self completion:^(UMSocialResponseEntity *response){
+    //        if (response.responseCode == UMSResponseCodeSuccess) {
+    //            NSLog(@"分享成功！");
+    //        }
+    //    }];
+    //1.2设置分享内容跳转
+    //    [UMSocialData defaultData].extConfig.wechatTimelineData.url = @"http://www.fityun.cn/";
+    //1.3设置朋友圈跳转title
+    //    [UMSocialData defaultData].extConfig.wechatTimelineData.title = @"微信朋友圈title";
+    //1.4分享类型，分享app
+    //    [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeApp;
+    
+    
+    
     
 }
 
