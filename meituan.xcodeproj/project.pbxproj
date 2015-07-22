@@ -135,6 +135,9 @@
 		E395719E1B54EE450064A84F /* location_yes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E395719C1B54EE450064A84F /* location_yes@2x.png */; };
 		E3A20FB01B5CF6B4005DA5CD /* icon_deal_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A20FAE1B5CF6B4005DA5CD /* icon_deal_phone@2x.png */; };
 		E3A20FB11B5CF6B4005DA5CD /* icon_merchant_location.png in Resources */ = {isa = PBXBuildFile; fileRef = E3A20FAF1B5CF6B4005DA5CD /* icon_merchant_location.png */; };
+		E3A20FBE1B5DE2A9005DA5CD /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A20FBD1B5DE2A9005DA5CD /* NSString+Size.m */; };
+		E3A20FC11B5F2D4E005DA5CD /* JZMerAroundGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A20FC01B5F2D4E005DA5CD /* JZMerAroundGroupModel.m */; };
+		E3A20FC41B5F30BC005DA5CD /* JZMerAroundGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A20FC31B5F30BC005DA5CD /* JZMerAroundGroupCell.m */; };
 		E3AB78531B53C7E500077171 /* m1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3AB78511B53C7E500077171 /* m1.jpg */; };
 		E3AB78541B53C7E500077171 /* m2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3AB78521B53C7E500077171 /* m2.jpg */; };
 		E3D814F21B2AD522005689B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D814F11B2AD522005689B8 /* main.m */; };
@@ -390,6 +393,12 @@
 		E395719C1B54EE450064A84F /* location_yes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_yes@2x.png"; sourceTree = "<group>"; };
 		E3A20FAE1B5CF6B4005DA5CD /* icon_deal_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_deal_phone@2x.png"; sourceTree = "<group>"; };
 		E3A20FAF1B5CF6B4005DA5CD /* icon_merchant_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_merchant_location.png; sourceTree = "<group>"; };
+		E3A20FBC1B5DE2A9005DA5CD /* NSString+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
+		E3A20FBD1B5DE2A9005DA5CD /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
+		E3A20FBF1B5F2D4E005DA5CD /* JZMerAroundGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZMerAroundGroupModel.h; sourceTree = "<group>"; };
+		E3A20FC01B5F2D4E005DA5CD /* JZMerAroundGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZMerAroundGroupModel.m; sourceTree = "<group>"; };
+		E3A20FC21B5F30BC005DA5CD /* JZMerAroundGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JZMerAroundGroupCell.h; sourceTree = "<group>"; };
+		E3A20FC31B5F30BC005DA5CD /* JZMerAroundGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JZMerAroundGroupCell.m; sourceTree = "<group>"; };
 		E3AB784C1B53BF4000077171 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		E3AB78511B53C7E500077171 /* m1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = m1.jpg; sourceTree = "<group>"; };
 		E3AB78521B53C7E500077171 /* m2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = m2.jpg; sourceTree = "<group>"; };
@@ -749,6 +758,15 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		E3A20FB21B5DDF45005DA5CD /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				E3A20FBC1B5DE2A9005DA5CD /* NSString+Size.h */,
+				E3A20FBD1B5DE2A9005DA5CD /* NSString+Size.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		E3D814E31B2AD522005689B8 = {
 			isa = PBXGroup;
 			children = (
@@ -932,6 +950,8 @@
 				E3513F871B4FC9CC0071936B /* JZMerCateGroupModel.m */,
 				E36331AE1B58E518008C19BB /* JZMerDetailModel.h */,
 				E36331AF1B58E518008C19BB /* JZMerDetailModel.m */,
+				E3A20FBF1B5F2D4E005DA5CD /* JZMerAroundGroupModel.h */,
+				E3A20FC01B5F2D4E005DA5CD /* JZMerAroundGroupModel.m */,
 			);
 			path = Merchant;
 			sourceTree = "<group>";
@@ -960,6 +980,7 @@
 		E3D8153F1B2AD95E005689B8 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				E3A20FB21B5DDF45005DA5CD /* Category */,
 				E3513F8E1B53BE190071936B /* Library */,
 				E3D815401B2AD95E005689B8 /* 3tdParts */,
 				E3D815411B2AD95E005689B8 /* Network */,
@@ -1179,6 +1200,8 @@
 				E3513F8A1B53568D0071936B /* JZKindFilterCell.m */,
 				E36331B11B58E90B008C19BB /* JZMerDetailImageCell.h */,
 				E36331B21B58E90B008C19BB /* JZMerDetailImageCell.m */,
+				E3A20FC21B5F30BC005DA5CD /* JZMerAroundGroupCell.h */,
+				E3A20FC31B5F30BC005DA5CD /* JZMerAroundGroupCell.m */,
 			);
 			path = Merchant;
 			sourceTree = "<group>";
@@ -1512,6 +1535,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D8159E1B3D24D2005689B8 /* RushDealsModel.m in Sources */,
+				E3A20FC11B5F2D4E005DA5CD /* JZMerAroundGroupModel.m in Sources */,
 				E3D815A41B423A96005689B8 /* HomeMenuCell.m in Sources */,
 				E3D815B21B43E055005689B8 /* RecommendModel.m in Sources */,
 				E3513F511B4CFFA10071936B /* ShopRecommendModel.m in Sources */,
@@ -1531,6 +1555,7 @@
 				E3513F5B1B4E11890071936B /* JZOnSiteViewController.m in Sources */,
 				E3D815BE1B45124C005689B8 /* DiscountModel.m in Sources */,
 				E3513F851B4FB19E0071936B /* JZMerchantFilterView.m in Sources */,
+				E3A20FC41B5F30BC005DA5CD /* JZMerAroundGroupCell.m in Sources */,
 				E3513F361B4BAC6D0071936B /* ShopViewController.m in Sources */,
 				E3D815C41B452C51005689B8 /* DiscountViewController.m in Sources */,
 				E3513F421B4CBFFF0071936B /* ShopImageCell.m in Sources */,
@@ -1542,6 +1567,7 @@
 				E3D815681B315570005689B8 /* HomeViewController.m in Sources */,
 				E3D815D01B4631E2005689B8 /* DiscountOCViewController.m in Sources */,
 				E3D815C71B453A3C005689B8 /* RushViewController.m in Sources */,
+				E3A20FBE1B5DE2A9005DA5CD /* NSString+Size.m in Sources */,
 				E3D815A91B438CA1005689B8 /* RushCell.m in Sources */,
 				E3513F0C1B4A1EF70071936B /* ImageScrollView.m in Sources */,
 				E36331631B562259008C19BB /* CustomAnnotationView.m in Sources */,

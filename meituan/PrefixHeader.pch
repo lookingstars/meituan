@@ -17,6 +17,7 @@
 #import "Public.h"
 #import "constant.h"
 #import "UIImageView+WebCache.h"
+#import "NSString+Size.h"
 
 
 #endif

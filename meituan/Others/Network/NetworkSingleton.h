@@ -81,6 +81,8 @@ typedef void(^FailureBlock)(NSString *error);
 #pragma mark - 获取商家详情图片
 -(void)getMerchantImagesResult:(NSDictionary *)userInfo url:(NSString *)url successBlock:(SuccessBlock)successBlock failureBlock:(FailureBlock)failureBlock;
 
+#pragma mark - 获取商家附近团购
+-(void)getAroundGroupPurchaseResult:(NSDictionary *)userInfo url:(NSString *)url successBlock:(SuccessBlock)successBlock failureBlock:(FailureBlock)failureBlock;
 
 
 

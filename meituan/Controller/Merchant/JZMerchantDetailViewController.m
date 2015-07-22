@@ -11,11 +11,16 @@
 #import "JZMerDetailModel.h"
 #import "MJExtension.h"
 #import "JZMerDetailImageCell.h"
+#import "NSString+Size.h"
+#import "MJExtension.h"
+#import "JZMerAroundGroupModel.h"
+#import "JZMerAroundGroupCell.h"
 
 @interface JZMerchantDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     UILabel *_titleLabel;
     NSMutableArray *_dataSourceArray;
+    NSMutableArray *_dealsArray;//附近团购数组
 }
 
 @end
@@ -41,6 +46,7 @@
     [self initTableView];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self getMerchantDetailData];
+        [self getAroundGroupPurchaseData];
     });
 }
 
@@ -51,6 +57,7 @@
 
 -(void)initData{
     _dataSourceArray = [[NSMutableArray alloc] init];
+    _dealsArray = [[NSMutableArray alloc] init];
 }
 
 -(void)setNav{
@@ -144,6 +151,28 @@
     }];
 }
 
+//获取附近团购
+-(void)getAroundGroupPurchaseData{
+    NSString *str1 = @"http://api.meituan.com/group/v1/recommend/nearstoredeals/poi/";
+    NSString *str2 = @"?__skck=40aaaf01c2fc4801b9c059efcd7aa146&__skcy=%2BKcL58MgLDsQfcX88AImaqHXAIw%3D&__skno=CF7C3655-49A4-43AF-AFB5-2AE1D7768521&__skts=1437114388.913142&__skua=bd6b6e8eadfad15571a15c3b9ef9199a&__vhost=api.mobile.meituan.com&ci=1&client=iphone&movieBundleVersion=100&msid=48E2B810-805D-4821-9CDD-D5C9E01BC98A2015-07-17-14-20300&offset=0&userId=104108621&userid=104108621&utm_campaign=AgroupBgroupE72175652459578368_c0_eb21e98ced02c66e9539669c2efedfec0D100Fa20141120nanning__m1__leftflow___ab_pindaochangsha__a__leftflow___ab_gxtest__gd__leftflow___ab_gxhceshi__nostrategy__leftflow___ab_i550poi_ktv__d__j___ab_chunceshishuju__a__a___ab_gxh_82__nostrategy__leftflow___ab_i_group_5_3_poidetaildeallist__a__b___b1junglehomepagecatesort__b__leftflow___ab_gxhceshi0202__b__a___ab_pindaoquxincelue0630__b__b1___ab_i550poi_xxyl__b__leftflow___ab_i_group_5_6_searchkuang__a__leftflow___i_group_5_2_deallist_poitype__d__d___ab_pindaoshenyang__a__leftflow___ab_b_food_57_purepoilist_extinfo__a__a___ab_waimaiwending__b__a___ab_waimaizhanshi__b__b1___ab_i550poi_lr__d__leftflow___ab_i_group_5_5_onsite__b__b___ab_xinkeceshi__b__leftflowGmerchant&utm_content=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&utm_medium=iphone&utm_source=AppStore&utm_term=5.7&uuid=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&version_name=5.7";
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@%@",str1,self.poiid,str2];
+    [[NetworkSingleton sharedManager] getAroundGroupPurchaseResult:nil url:urlStr successBlock:^(id responseBody){
+        NSLog(@"附近团购请求成功");
+        NSDictionary *dataDic = [responseBody objectForKey:@"data"];
+        NSMutableArray *dealsArray = [dataDic objectForKey:@"deals"];
+        [_dealsArray removeAllObjects];
+        for (int i = 0; i < dealsArray.count; i++) {
+            JZMerAroundGroupModel *jzAroundM = [JZMerAroundGroupModel objectWithKeyValues:dealsArray[i]];
+            [_dealsArray addObject:jzAroundM];
+        }
+        
+        [self.tableView reloadData];
+        
+    } failureBlock:^(NSString *error){
+        NSLog(@"附近团购请求失败:%@",error);
+    }];
+}
+
 
 
 
@@ -151,9 +180,15 @@
 
 #pragma mark - UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 3;
+    if (_dealsArray.count>0) {
+        return 3;
+    }
+    return 2;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (section == 2) {
+        return _dealsArray.count+1;
+    }
     return 1;
 }
 
@@ -172,6 +207,9 @@
     }else if(indexPath.section == 1){
         return 54;
     }else if (indexPath.section == 2){
+        if (indexPath.row>0) {
+            return 100;
+        }
         return 40;
     }else{
         return 40;
@@ -208,6 +246,7 @@
             //位置信息
             UILabel *locationLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, 4, screen_width-40-90, 50)];
             locationLabel.tag = 200;
+            locationLabel.font = [UIFont systemFontOfSize:15];
             locationLabel.textColor = [UIColor grayColor];
             locationLabel.numberOfLines = 2;
             [cell addSubview:locationLabel];
@@ -228,17 +267,33 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         return cell;
-    }else if (indexPath.row == 2){
-        static NSString *cellIndentifier = @"detailCell2";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
+    }else if (indexPath.section == 2){
+        if (indexPath.row == 0) {
+            static NSString *cellIndentifier = @"detailCell20";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+            if (cell == nil) {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
+            }
+            if (_dealsArray.count > 0) {
+                cell.textLabel.text = @"附近团购";
+                cell.textLabel.textColor = [UIColor grayColor];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            }
+            return cell;
+        }else{
+            static NSString *cellIndentifier = @"detailCell21";
+            JZMerAroundGroupCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+            if (cell == nil) {
+                cell = [[JZMerAroundGroupCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
+            }
+            
+            JZMerAroundGroupModel *jzAroundM = _dealsArray[indexPath.row-1];
+            [cell setJzMerAroundM:jzAroundM];
+            
+            
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
         }
-        
-        
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
-        return cell;
     }else{
         static NSString *cellIndentifier = @"detailCell3";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
