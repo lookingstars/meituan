@@ -94,7 +94,7 @@
 
 -(void)OnBackBtn:(UIButton *)sender{
     NSLog(@"_isFirstIn:%d",_isFirstIn);
-    if (_isFirstIn == 1) {
+    if (_isFirstIn <= 1) {
         [self.navigationController popViewControllerAnimated:YES];
     }else{
         _isFirstIn = _isFirstIn - 2;
