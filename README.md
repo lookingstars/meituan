@@ -8,6 +8,7 @@
 
 
 Xcode7，真机调试，如果出现下面的错误提示，提示友盟的library不支持bitcode
+
 解决办法：1.更新library
 
           2.关闭bitcode（Xcode7+以上才有，以下的没有这个配置项）
