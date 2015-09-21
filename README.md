@@ -8,4 +8,4 @@
 
 
 
-![image](https://github.com/lookingstars/meituan/raw/master/screenshots/youmeng_ios9.png)
+![image](https://github.com/lookingstars/meituan/blob/master/meituan/screenshots/youmeng_ios9.png)
