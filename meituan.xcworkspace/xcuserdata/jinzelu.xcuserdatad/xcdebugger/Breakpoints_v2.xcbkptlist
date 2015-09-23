@@ -9,13 +9,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "meituan/Controller/Home/HomeViewController.m"
-            timestampString = "462441626.51535"
+            filePath = "meituan/Controller/Merchant/JZMerchantDetailViewController.m"
+            timestampString = "464581192.400478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "471"
-            endingLineNumber = "471"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "meituan/Controller/Merchant/JZMerchantDetailViewController.m"
+            timestampString = "464581201.730436"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "-getMerchantDetailData"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

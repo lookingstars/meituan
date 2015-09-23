@@ -140,6 +140,7 @@
 		E3A20FC41B5F30BC005DA5CD /* JZMerAroundGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A20FC31B5F30BC005DA5CD /* JZMerAroundGroupCell.m */; };
 		E3AB78531B53C7E500077171 /* m1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3AB78511B53C7E500077171 /* m1.jpg */; };
 		E3AB78541B53C7E500077171 /* m2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3AB78521B53C7E500077171 /* m2.jpg */; };
+		E3B7F0841BB26869001F4E16 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B7F0811BB26869001F4E16 /* libMobClickLibrary.a */; };
 		E3D814F21B2AD522005689B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D814F11B2AD522005689B8 /* main.m */; };
 		E3D814F51B2AD522005689B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D814F41B2AD522005689B8 /* AppDelegate.m */; };
 		E3D814F81B2AD522005689B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D814F71B2AD522005689B8 /* ViewController.m */; };
@@ -402,6 +403,9 @@
 		E3AB784C1B53BF4000077171 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		E3AB78511B53C7E500077171 /* m1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = m1.jpg; sourceTree = "<group>"; };
 		E3AB78521B53C7E500077171 /* m2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = m2.jpg; sourceTree = "<group>"; };
+		E3B7F0811BB26869001F4E16 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		E3B7F0821BB26869001F4E16 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		E3B7F0831BB26869001F4E16 /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
 		E3D814EC1B2AD522005689B8 /* meituan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meituan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D814F01B2AD522005689B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3D814F11B2AD522005689B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -509,6 +513,7 @@
 				E395718F1B54B2A90064A84F /* libSocialQQ.a in Frameworks */,
 				E39571821B54B2760064A84F /* libz.dylib in Frameworks */,
 				E39571801B54B26A0064A84F /* libstdc++.dylib in Frameworks */,
+				E3B7F0841BB26869001F4E16 /* libMobClickLibrary.a in Frameworks */,
 				E395717E1B54B25C0064A84F /* CoreTelephony.framework in Frameworks */,
 				E39571901B54B2A90064A84F /* TencentOpenAPI.framework in Frameworks */,
 				E39571921B54B2A90064A84F /* libSocialWechat.a in Frameworks */,
@@ -625,6 +630,7 @@
 		E3513F8E1B53BE190071936B /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				E3B7F0801BB26869001F4E16 /* UMAnalytics_Sdk_3.5.16 */,
 				E39571831B54B2A90064A84F /* UMSocial_Sdk_Extra_Frameworks */,
 				E3513F8F1B53BE190071936B /* UMSocial_Sdk_4.2.3 */,
 			);
@@ -765,6 +771,16 @@
 				E3A20FBD1B5DE2A9005DA5CD /* NSString+Size.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		E3B7F0801BB26869001F4E16 /* UMAnalytics_Sdk_3.5.16 */ = {
+			isa = PBXGroup;
+			children = (
+				E3B7F0811BB26869001F4E16 /* libMobClickLibrary.a */,
+				E3B7F0821BB26869001F4E16 /* MobClick.h */,
+				E3B7F0831BB26869001F4E16 /* MobClickSocialAnalytics.h */,
+			);
+			path = UMAnalytics_Sdk_3.5.16;
 			sourceTree = "<group>";
 		};
 		E3D814E31B2AD522005689B8 = {
@@ -1740,6 +1756,7 @@
 					"$(PROJECT_DIR)/meituan/Others/Library/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/meituan/Others/Library/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/meituan/Others/Library/Wechat",
+					"$(PROJECT_DIR)/meituan/Others/Library/UMAnalytics_Sdk_3.5.16",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
@@ -1765,6 +1782,7 @@
 					"$(PROJECT_DIR)/meituan/Others/Library/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/meituan/Others/Library/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/meituan/Others/Library/Wechat",
+					"$(PROJECT_DIR)/meituan/Others/Library/UMAnalytics_Sdk_3.5.16",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";

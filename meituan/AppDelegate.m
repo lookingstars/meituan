@@ -18,6 +18,7 @@
 #import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
 #import "NetworkSingleton.h"
+#import "MobClick.h"
 
 
 @interface AppDelegate ()<CLLocationManagerDelegate>
@@ -199,7 +200,8 @@
     //改变UITabBarItem字体颜色
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:RGB(54, 185,175),UITextAttributeTextColor, nil] forState:UIControlStateSelected];
     
-    
+    //友盟统计
+    [MobClick startWithAppkey:UMAPPKEY reportPolicy:BATCH   channelId:@"GitHub"];
     
     
     //友盟初始化
