@@ -143,9 +143,9 @@
 }
 
 -(void)initRootVC{
-    //此处一定要给window一个frame，添加广告image时这个必须要
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.hidden = NO;
     //1.
     HomeViewController *VC1 = [[HomeViewController alloc] init];
     UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:VC1];

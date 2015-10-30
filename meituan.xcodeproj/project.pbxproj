@@ -1741,7 +1741,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 405C5253C4A7F2E09A4EDB43 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/meituan/Others/Library/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
@@ -1767,7 +1769,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 752184B5097C9E738B83F96D /* Pods.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/meituan/Others/Library/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
