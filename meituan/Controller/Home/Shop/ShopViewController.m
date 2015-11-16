@@ -199,12 +199,13 @@
             [_shopRecommendArray addObject:shopRM];
         }
         
-        
+        self.tableView.hidden = NO;
+        [_activityView stopAnimating];
         [self.tableView reloadData];
         
         
     } failureBlock:^(NSString *error){
-//        NSLog(@"店铺推荐请求失败：%@",error);
+        NSLog(@"店铺推荐请求失败：%@",error);
     }];
 }
 
