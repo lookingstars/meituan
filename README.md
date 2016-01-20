@@ -2,12 +2,20 @@
 高仿美团iOS版，版本号5.7，不可用于其他商业用途  
 iOS技术交流群：112365317  
 
+
+
 # 注
 百度糯米官方版：采用少量的xib文件 + 大量的纯代码方式开发的。  
+
 高仿糯米版本：采用storyboard创建界面为主方式来开发，跟官方版做区别。  
+
 美团官方版：storyboard创建界面为主方式开发。  
+
 高仿的美团5.7：以纯代码方式来开发，以作区别。  
+
 [高仿糯米iOS](https://github.com/lookingstars/nuomi)  
+
+[高仿美团iOS](https://github.com/lookingstars/meituan)  
 
 React Native仿美团小demo [https://github.com/lookingstars/RNMeituan](https://github.com/lookingstars/RNMeituan)
 
