@@ -53,7 +53,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-
+    self.navigationController.interactivePopGestureRecognizer.delegate = nil;
     [self initData];        
     [self setNav];
     [self initTableView];    
