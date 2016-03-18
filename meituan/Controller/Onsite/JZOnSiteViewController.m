@@ -108,6 +108,7 @@
 
 -(void)getHomeServiewData{
     NSString *urlStr = @"http://api.meituan.com/apollo/index?__skck=40aaaf01c2fc4801b9c059efcd7aa146&__skcy=fZgLxmKv3t4SJLEnmK%2FpVquwJfs%3D&__skno=E9781389-B5C0-47E7-9C45-678C0CE3A25D&__skts=1436146268.971232&__skua=bd6b6e8eadfad15571a15c3b9ef9199a&ci=1&clientType=ios&movieBundleVersion=100&msid=48E2B810-805D-4821-9CDD-D5C9E01BC98A2015-07-06-09-25492&userid=10086&utm_campaign=AgroupBgroupD100Fab_chunceshishuju__a__a___b1junglehomepagecatesort__b__leftflow___ab_gxhceshi__nostrategy__leftflow___ab_gxhceshi0202__b__a___ab_pindaochangsha__a__leftflow___ab_xinkeceshi__b__leftflow___ab_gxtest__gd__leftflow___ab_waimaiwending__a__a___ab_gxh_82__nostrategy__leftflow___ab_pindaoshenyang__a__leftflow___i_group_5_2_deallist_poitype__d__d___ab_b_food_57_purepoilist_extinfo__a__a___ab_i_group_5_3_poidetaildeallist__a__b___ab_pindaoquxincelue0630__b__b1___a20141120nanning__m1__leftflow___ab_waimaizhanshi__b__b1___ab_i_group_5_5_onsite__b__b___ab_i_group_5_6_searchkuang__a__leftflowGonsite&utm_content=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&utm_medium=iphone&utm_source=AppStore&utm_term=5.7&uuid=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&version_name=5.7";
+    __weak __typeof(self) weakself = self;
     [[NetworkSingleton sharedManager] getHomeServiceResult:nil url:urlStr successBlock:^(id responseBody){
         NSLog(@"上门服务请求成功");
         [_homeServiceArray removeAllObjects];
@@ -117,18 +118,19 @@
             [_homeServiceArray addObject:homeM];
         }
         
-        [self.tableView reloadData];
+        [weakself.tableView reloadData];
         
         
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
     } failureBlock:^(NSString *error){
         NSLog(@"上门服务请求失败：%@",error);
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
     }];
 }
 
 -(void)getServiceAdvData{
     NSString *urlStr = @"http://api.meituan.com/api/v3/adverts?__skck=40aaaf01c2fc4801b9c059efcd7aa146&__skcy=QQ2QWVSoLi6cGQD%2FLj1WzZlK8a0%3D&__skno=0C297102-BDB7-41E2-A3F3-4F93DA767CC2&__skts=1436147276.789350&__skua=bd6b6e8eadfad15571a15c3b9ef9199a&app=group&category=20002&ci=1&cityid=1&clienttp=iphone&devid=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&movieBundleVersion=100&msid=48E2B810-805D-4821-9CDD-D5C9E01BC98A2015-07-06-09-25492&uid=10086&userid=10086&utm_campaign=AgroupBgroupD100Fab_waimaizhanshi__b__b1___ab_chunceshishuju__a__a___ab_gxhceshi__nostrategy__leftflow___ab_gxhceshi0202__b__a___ab_pindaochangsha__a__leftflow___ab_xinkeceshi__b__leftflow___ab_gxtest__gd__leftflow___ab_waimaiwending__a__a___ab_gxh_82__nostrategy__leftflow___ab_pindaoshenyang__a__leftflow___i_group_5_2_deallist_poitype__d__d___ab_b_food_57_purepoilist_extinfo__a__a___ab_i_group_5_3_poidetaildeallist__a__b___a20141120nanning__m1__leftflow___ab_pindaoquxincelue0630__b__b1___b1junglehomepagecatesort__b__leftflow___ab_i_group_5_5_onsite__b__b___ab_i_group_5_6_searchkuang__a__leftflowGonsite&utm_content=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&utm_medium=iphone&utm_source=AppStore&utm_term=5.7&uuid=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&version=5.7&version_name=5.7";
+    __weak __typeof(self) weakself = self;
     [[NetworkSingleton sharedManager] getServiceAdvResult:nil url:urlStr successBlock:^(id responseBody){
         NSLog(@"上门服务广告请求成功");
         [_advImageUrlArray removeAllObjects];
@@ -143,7 +145,7 @@
         }
         
         
-        [self.tableView reloadData];
+        [weakself.tableView reloadData];
     } failureBlock:^(NSString *error){
         NSLog(@"上门服务广告请求失败：%@",error);
     }];

@@ -179,22 +179,25 @@
 //请求抢购数据
 -(void)getRushBuyData{
     NSString *url = @"http://api.meituan.com/group/v1/deal/activity/1?__skck=40aaaf01c2fc4801b9c059efcd7aa146&__skcy=NF9S7jqv3TVBAoEURoapWJ5VBdQ%3D&__skno=FB6346F3-98FF-4B26-9C36-DC9022236CC3&__skts=1434530933.316028&__skua=bd6b6e8eadfad15571a15c3b9ef9199a&__vhost=api.mobile.meituan.com&ci=1&client=iphone&movieBundleVersion=100&msid=48E2B810-805D-4821-9CDD-D5C9E01BC98A2015-06-17-14-50363&ptId=iphone_5.7&userid=10086&utm_campaign=AgroupBgroupD100Fab_chunceshishuju__a__a___b1junglehomepagecatesort__b__leftflow___ab_gxhceshi__nostrategy__leftflow___ab_gxhceshi0202__b__a___ab_pindaochangsha__a__leftflow___ab_xinkeceshi__b__leftflow___ab_gxtest__gd__leftflow___ab_gxh_82__nostrategy__leftflow___ab_pindaoshenyang__a__leftflow___i_group_5_2_deallist_poitype__d__d___ab_b_food_57_purepoilist_extinfo__a__a___ab_trip_yidizhoubianyou__b__leftflow___ab_i_group_5_3_poidetaildeallist__a__b___ab_waimaizhanshi__b__b1___a20141120nanning__m1__leftflow___ab_pindaoquxincelue__a__leftflow___ab_i_group_5_5_onsite__b__b___ab_i_group_5_6_searchkuang__a__leftflow&utm_content=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&utm_medium=iphone&utm_source=AppStore&utm_term=5.7&uuid=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&version_name=5.7";
+    __weak __typeof(self) weakself = self;
     [[NetworkSingleton sharedManager] getRushBuyResult:nil url:url successBlock:^(id responseBody){
-        NSLog(@"抢购请求成功");
-        NSDictionary *dataDic = [responseBody objectForKey:@"data"];
-        RushDataModel *rushDataM = [RushDataModel objectWithKeyValues:dataDic];
-        [_rushArray removeAllObjects];
-        
-        for (int i = 0; i < rushDataM.deals.count; i++) {
-            RushDealsModel *deals = [RushDealsModel objectWithKeyValues:rushDataM.deals[i]];
-            [_rushArray addObject:deals];
+        if (weakself) {
+            NSLog(@"抢购请求成功");
+            NSDictionary *dataDic = [responseBody objectForKey:@"data"];
+            RushDataModel *rushDataM = [RushDataModel objectWithKeyValues:dataDic];
+            [_rushArray removeAllObjects];
+            
+            for (int i = 0; i < rushDataM.deals.count; i++) {
+                RushDealsModel *deals = [RushDealsModel objectWithKeyValues:rushDataM.deals[i]];
+                [_rushArray addObject:deals];
+            }
+            [weakself.tableView reloadData];
         }
-        [self.tableView reloadData];
-        
-        
     } failureBlock:^(NSString *error){
-        NSLog(@"%@",error);
-        [self.tableView.header endRefreshing];
+        if (weakself) {
+            NSLog(@"%@",error);
+            [weakself.tableView.header endRefreshing];
+        }
     }];
 }
 //请求热门排队数据
@@ -205,6 +208,7 @@
     
     NSString *urlStr = [NSString stringWithFormat:@"http://api.meituan.com/group/v1/itemportal/position/%f,%f?__skck=40aaaf01c2fc4801b9c059efcd7aa146&__skcy=x6Fyq0RW3Z7ZtUXKPpRXPbYUGRE%3D&__skno=348FAC89-38E1-4880-A550-E992DB9AE44E&__skts=1434530933.451634&__skua=bd6b6e8eadfad15571a15c3b9ef9199a&__vhost=api.mobile.meituan.com&ci=1&cityId=1&client=iphone&movieBundleVersion=100&msid=48E2B810-805D-4821-9CDD-D5C9E01BC98A2015-06-17-14-50363&userid=10086&utm_campaign=AgroupBgroupD100Fab_chunceshishuju__a__a___b1junglehomepagecatesort__b__leftflow___ab_gxhceshi__nostrategy__leftflow___ab_gxhceshi0202__b__a___ab_pindaochangsha__a__leftflow___ab_xinkeceshi__b__leftflow___ab_gxtest__gd__leftflow___ab_gxh_82__nostrategy__leftflow___ab_pindaoshenyang__a__leftflow___i_group_5_2_deallist_poitype__d__d___ab_b_food_57_purepoilist_extinfo__a__a___ab_trip_yidizhoubianyou__b__leftflow___ab_i_group_5_3_poidetaildeallist__a__b___ab_waimaizhanshi__b__b1___a20141120nanning__m1__leftflow___ab_pindaoquxincelue__a__leftflow___ab_i_group_5_5_onsite__b__b___ab_i_group_5_6_searchkuang__a__leftflow&utm_content=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&utm_medium=iphone&utm_source=AppStore&utm_term=5.7&uuid=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&version_name=5.7",delegate.latitude,delegate.longitude];
 //    NSLog(@"热门排队urlstr:    %@",urlStr);
+    __weak __typeof(self) weakself = self;
     NSLog(@"最新的经纬度：%f,%f",delegate.latitude,delegate.longitude);
     
     [[NetworkSingleton sharedManager] getHotQueueResult:nil url:urlStr successBlock:^(id responseBody){
@@ -212,10 +216,10 @@
         NSDictionary *dataDic = [responseBody objectForKey:@"data"];
         _hotQueueData = [HotQueueModel objectWithKeyValues:dataDic];
         
-        [self.tableView reloadData];
+        [weakself.tableView reloadData];
     } failureBlock:^(NSString *error){
         NSLog(@"热门排队：%@",error);
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
     }];
 }
 //推荐数据
@@ -228,7 +232,7 @@
     
     
     
-    
+    __weak __typeof(self) weakself = self;
     [[NetworkSingleton sharedManager] getRecommendResult:nil url:urlStr successBlock:^(id responseBody){
         NSLog(@"推荐：成功");
         NSMutableArray *dataDic = [responseBody objectForKey:@"data"];
@@ -238,17 +242,18 @@
             [_recommendArray addObject:recommend];
         }
         
-        [self.tableView reloadData];
+        [weakself.tableView reloadData];
         
     } failureBlock:^(NSString *error){
         NSLog(@"推荐：%@",error);
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
     }];
 }
 
 //获取折扣数据
 -(void)getDiscountData{
     NSString *urlStr = @"http://api.meituan.com/group/v1/deal/topic/discount/city/1?ci=1&client=iphone&movieBundleVersion=100&msid=48E2B810-805D-4821-9CDD-D5C9E01BC98A2015-06-17-14-50363&userid=10086&utm_campaign=AgroupBgroupD100Fab_chunceshishuju__a__a___b1junglehomepagecatesort__b__leftflow___ab_gxhceshi__nostrategy__leftflow___ab_gxhceshi0202__b__a___ab_pindaochangsha__a__leftflow___ab_xinkeceshi__b__leftflow___ab_gxtest__gd__leftflow___ab_gxh_82__nostrategy__leftflow___ab_pindaoshenyang__a__leftflow___i_group_5_2_deallist_poitype__d__d___ab_b_food_57_purepoilist_extinfo__a__a___ab_trip_yidizhoubianyou__b__leftflow___ab_i_group_5_3_poidetaildeallist__a__b___ab_waimaizhanshi__b__b1___a20141120nanning__m1__leftflow___ab_pindaoquxincelue__a__leftflow___ab_i_group_5_5_onsite__b__b___ab_i_group_5_6_searchkuang__a__leftflow&utm_content=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&utm_medium=iphone&utm_source=AppStore&utm_term=5.7&uuid=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&version_name=5.7";
+    __weak __typeof(self) weakself = self;
     [[NetworkSingleton sharedManager] getDiscountResult:nil url:urlStr successBlock:^(id responseBody){
         NSLog(@"获取折扣数据成功");
         
@@ -259,13 +264,13 @@
             [_discountArray addObject:discount];
         }
         
-        [self.tableView reloadData];
+        [weakself.tableView reloadData];
         
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
         
     } failureBlock:^(NSString *error){
         NSLog(@"获取折扣数据失败：%@",error);
-        [self.tableView.header endRefreshing];
+        [weakself.tableView.header endRefreshing];
     }];
 }
 

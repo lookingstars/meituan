@@ -117,6 +117,7 @@
 -(void)getOCDiscountData{
     NSString *urlStr = [NSString stringWithFormat:@"http://api.meituan.com/group/v1/deal/topic/discount/city/1/detail/%@?__skck=40aaaf01c2fc4801b9c059efcd7aa146&__skcy=74R1QjiyuJg%2BOzAqIUfOXDpTA2M%3D&__skno=A3C85DF9-B5C1-4623-8AB4-8D978B0A50E6&__skts=1435891962.015266&__skua=bd6b6e8eadfad15571a15c3b9ef9199a&__vhost=api.mobile.meituan.com&ci=1&client=iphone&limit=40&movieBundleVersion=100&msid=48E2B810-805D-4821-9CDD-D5C9E01BC98A2015-07-03-09-14430&offset=0&userid=10086&utm_campaign=AgroupBgroupD100Fab_i_group_5_3_poidetaildeallist__a__b___ab_gxhceshi0202__b__a___ab_xinkeceshi__b__leftflow___ab_waimaiwending__a__a___i_group_5_2_deallist_poitype__d__d___ab_b_food_57_purepoilist_extinfo__a__a___ab_pindaoquxincelue0630__b__b1___ab_waimaizhanshi__b__b1___ab_i_group_5_5_onsite__b__b___ab_i_group_5_6_searchkuang__a__leftflowGhomepage_topic3_8012&utm_content=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&utm_medium=iphone&utm_source=AppStore&utm_term=5.7&uuid=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&version_name=5.7",self.ID];
     NSLog(@"折扣详情url:%@",urlStr);
+    __weak __typeof(self) weakself = self;
     [[NetworkSingleton sharedManager] getOCDiscountResult:nil url:urlStr successBlock:^(id responseBody){
         NSLog(@"请求折扣详情成功");
         NSDictionary *dataDic = [responseBody objectForKey:@"data"];
@@ -143,7 +144,7 @@
         }
         
         
-        [self.tableView reloadData];
+        [weakself.tableView reloadData];
     } failureBlock:^(NSString *error){
         NSLog(@"请求折扣详情失败：%@",error);
     }];
