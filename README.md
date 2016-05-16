@@ -3,9 +3,12 @@
 iOS技术交流群：112365317  
 
 # 运行
-1.终端切换到工程目录
-$ pod install
-2.双击meituan.xcworkspace运行
+1.终端切换到工程目录  
+
+$ pod install  
+
+2.双击meituan.xcworkspace运行  
+
 
 # 注
 百度糯米官方版：采用少量的xib文件 + 大量的纯代码方式开发的。  
