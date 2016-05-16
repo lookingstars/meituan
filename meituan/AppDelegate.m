@@ -14,6 +14,7 @@
 #import "JZOnSiteViewController.h"
 #import "JZMerchantViewController.h"
 
+#import <AFNetworkActivityLogger/AFNetworkActivityLogger.h>
 #import <CoreLocation/CoreLocation.h>
 #import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
@@ -221,7 +222,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+    // 启用网络接口日志，便于排查
+    [[AFNetworkActivityLogger sharedLogger] setLevel:AFLoggerLevelDebug];
+    [[AFNetworkActivityLogger sharedLogger] startLogging];
     [self setupLocationManager];
     [self initRootVC];
     

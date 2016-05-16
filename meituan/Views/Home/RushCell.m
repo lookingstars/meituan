@@ -80,6 +80,9 @@
         NSInteger oldPrice = [rush.price integerValue];
         
         UIImageView *imageView = (UIImageView *)[self viewWithTag:20+i];
+        
+        imageUrl = [imageUrl stringByReplacingOccurrencesOfString:@"w.h" withString:@"160.0"];
+        
         [imageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:nil];
         
         UILabel *newPriceLabel = (UILabel *)[self viewWithTag:50+i];
@@ -106,5 +109,8 @@
     NSLog(@"tag:%ld",sender.view.tag);
     [self.delegate didSelectRushIndex:sender.view.tag];
 }
+
+
+
 
 @end

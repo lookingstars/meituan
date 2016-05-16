@@ -1,4 +1,7 @@
 PODS:
+  - AFNetworkActivityLogger (2.0.4):
+    - AFNetworking/NSURLConnection (~> 2.0)
+    - AFNetworking/NSURLSession (~> 2.0)
   - AFNetworking (2.5.3):
     - AFNetworking/NSURLConnection (= 2.5.3)
     - AFNetworking/NSURLSession (= 2.5.3)
@@ -32,17 +35,19 @@ PODS:
   - UMengAnalytics (3.4.6)
 
 DEPENDENCIES:
+  - AFNetworkActivityLogger
   - AFNetworking (~> 2.0)
-  - AMap3DMap
-  - AMapSearch
+  - AMap3DMap (= 2.5.0)
+  - AMapSearch (= 2.5.0)
   - MBProgressHUD (~> 0.9.1)
-  - MJExtension
-  - MJRefresh
-  - SDWebImage
-  - SVProgressHUD
-  - UMengAnalytics
+  - MJExtension (= 1.2.1)
+  - MJRefresh (= 1.4.5)
+  - SDWebImage (= 3.7.2)
+  - SVProgressHUD (= 1.1.3)
+  - UMengAnalytics (= 3.4.6)
 
 SPEC CHECKSUMS:
+  AFNetworkActivityLogger: 121486778117d53b3ab1c61d264b88081d0c3eee
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
   AMap3DMap: 9f6274e39cd8937b5651f868c35deef9a37edce3
   AMapSearch: eafa5a749b1078a46f15e6108e88307f78f75e9b
@@ -53,4 +58,4 @@ SPEC CHECKSUMS:
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
   UMengAnalytics: 24c06f0ea07295d2f1c093f0fe12d196fd801ea4
 
-COCOAPODS: 0.36.4
+COCOAPODS: 0.39.0
