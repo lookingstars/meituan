@@ -3,3 +3,6 @@
 .*
 Pods/
 CocoaPodsDemo.xcworkspace/
+Pods
+.DS_Store
+project.xcworkspace/

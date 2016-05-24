@@ -9,6 +9,7 @@ $ pod install
 
 2.双击meituan.xcworkspace运行  
 
+注：采用cocoapods管理第三方库，请双击meituan.xcworkspace启动工程。不要双击meituan.xcodeproj启动，否则会提示“library not found for -lPods-AFNetworking”
 
 # 注
 百度糯米官方版：采用少量的xib文件 + 大量的纯代码方式开发的。  
