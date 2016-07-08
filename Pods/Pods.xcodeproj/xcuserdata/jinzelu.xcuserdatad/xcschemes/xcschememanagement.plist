@@ -29,7 +29,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-meituan.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,7 +47,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4AE518CF601D7B67555A0D27A9533708</key>
+		<key>25FF4DB092369258C8FAA126265E50F4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3733ADD6F143F5F11E7BB8F91998F580</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,17 +62,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5B2D5E1962A36169B3DD69FB77C8C40D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>5EA94E3357CB6918D14CF6C129484928</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7835619D6AA9D73F09713C6A47893072</key>
+		<key>9E02F746151DEBCC647788AC7F358A7A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
